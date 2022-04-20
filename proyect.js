@@ -20,6 +20,26 @@ start.addEventListener("click", function(){
     }
 })
 
+reset.addEventListener ("click", function (){
+    wm.innerText = 25;
+    ws.innerText = "00";
+    bm.innerText = 5;
+    bs.innerText = "00";
+
+    document.getElementById("counter").innerText = 0 ;
+    pauseInterval()
+    startTimer = undefined;
+})
+
+pause.addEventListener ("click", function(){
+    pauseInterval ()
+    startTimer = undefined;
+})
+
+function pauseInterval (){
+    clearInterval (startTimer);
+
+}
 
 // Conteo del tiempo de trabajo//
 
@@ -42,7 +62,7 @@ start.addEventListener("click", function(){
       }
 
 
-//Incrementacion del contador cuando complete un ciclo//
+  //Incrementacion del contador cuando complete un ciclo//
 
  if (wm.innerText == 0 && ws.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){
     wm.innerText = 25;
@@ -54,3 +74,4 @@ start.addEventListener("click", function(){
     document.getElementById("counter").innerText++;
   }
 }
+
